@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Categories } from '../../models/categories';
 import { Contact } from '../../models/contact.model';
 
@@ -11,14 +11,14 @@ import { Contact } from '../../models/contact.model';
 })
 export class ContactCreationComponent implements OnInit {
 
-  @Input() contact: Contact
+  @Input() contact: Contact;
   @Output() close = new EventEmitter<any>();
   @Output() newContact = new EventEmitter<any>();
   contactForm: FormGroup;
   categories = Categories;
 
   private phoneNumberRegex = /^\+?(?:\d\s?){10,12}$/;
-  private nameRegex = /^(?=.{1,40}$)[a-zA-Z]+(?:[-' ][a-zA-Z]+)*$/
+  private nameRegex = /^(?=.{1,40}$)[a-zA-Z]+(?:[-' ][a-zA-Z]+)*$/;
 
   constructor(private fb: FormBuilder) { }
 
@@ -30,13 +30,13 @@ export class ContactCreationComponent implements OnInit {
       category: ['', Validators.required]
     });
     this.handleContactEdit();
-  };
+  }
 
-  closeCreation() {
+  closeCreation(): void {
     this.close.emit(true);
   }
 
-  handleContactEdit() {
+  handleContactEdit(): void {
     if (this.contact) {
       this.firstName.setValue(this.contact.firstName);
       this.lastName.setValue(this.contact.lastName);
@@ -45,7 +45,7 @@ export class ContactCreationComponent implements OnInit {
     }
   }
 
-  createContact() {
+  createContact(): void {
     this.contactForm.markAllAsTouched();
     if (this.contactForm.valid) {
       this.close.emit(true);
@@ -54,23 +54,23 @@ export class ContactCreationComponent implements OnInit {
         this.contact.category = this.category.value;
         this.contact.lastName = this.lastName.value;
         this.contact.phoneNumber = this.phoneNumber.value;
-        this.newContact.emit(this.contact)
+        this.newContact.emit(this.contact);
       } else {
         this.newContact.emit(this.contactForm.value);
       }
     }
   }
 
-  get firstName() {
+  get firstName(): AbstractControl {
     return this.contactForm.get('firstName');
   }
-  get lastName() {
+  get lastName(): AbstractControl {
     return this.contactForm.get('lastName');
   }
-  get phoneNumber() {
+  get phoneNumber(): AbstractControl {
     return this.contactForm.get('phoneNumber');
   }
-  get category() {
+  get category(): AbstractControl {
     return this.contactForm.get('category');
   }
 }

@@ -4,35 +4,34 @@ import { FilterPipe } from './filter.pipe';
 describe('FilterPipe', () => {
   const mockList: Contact[] = [
     {
-      firstName: "Steve",
-      lastName: "Smithies",
-      phoneNumber: "07712312",
-      category: "friend",
+      firstName: 'Steve',
+      lastName: 'Smithies',
+      phoneNumber: '07712312',
+      category: 'friend',
       id: 5
     },
     {
-      firstName: "John",
-      lastName: "Smith",
-      phoneNumber: "07729431312",
-      category: "family",
+      firstName: 'John',
+      lastName: 'Smith',
+      phoneNumber: '07729431312',
+      category: 'family',
       id: 3
     },
     {
-      firstName: "Steven",
-      lastName: "Brown",
-      phoneNumber: "0771233131",
-      category: "friend",
+      firstName: 'Steven',
+      lastName: 'Brown',
+      phoneNumber: '0771233131',
+      category: 'friend',
       id: 6
     },
     {
-      firstName: "Zack",
-      lastName: "Alonso",
-      phoneNumber: "07729795989",
-      category: "family",
+      firstName: 'Zack',
+      lastName: 'Alonso',
+      phoneNumber: '07729795989',
+      category: 'family',
       id: 7
     }
-
-  ]
+  ];
 
   const pipe = new FilterPipe();
 
@@ -53,13 +52,13 @@ describe('FilterPipe', () => {
   describe('firstName and lastName sort', () => {
     it('should sort the list alphabetically by firstName if value is correctly provided', () => {
       expect(pipe.transform(mockList, '', 'firstNameSort', '')[0].firstName).toEqual('John');
-      expect(pipe.transform(mockList, '', 'firstNameSort', '')[mockList.length - 1].firstName).toEqual('Zack')
+      expect(pipe.transform(mockList, '', 'firstNameSort', '')[mockList.length - 1].firstName).toEqual('Zack');
 
     });
 
     it('should sort the list alphabetically by firstName if value is correctly provided', () => {
-      expect(pipe.transform(mockList, '', 'lastNameSort', '')[0].lastName).toEqual('Alonso')
-      expect(pipe.transform(mockList, '', 'lastNameSort', '')[mockList.length - 1].lastName).toEqual('Smithies')
+      expect(pipe.transform(mockList, '', 'lastNameSort', '')[0].lastName).toEqual('Alonso');
+      expect(pipe.transform(mockList, '', 'lastNameSort', '')[mockList.length - 1].lastName).toEqual('Smithies');
     });
   });
 

@@ -45,6 +45,7 @@
 * More testing is required
     - Ideally I'd have gotten more tests done and set up a report for coverage, however I did not want to spend a lot of time on those
     - I try to work my best with TDD and did so for the most part. Particularily with the filter pipe.
+* The filter pipe has got a bit messy, ideally I'd refactor some of it down to more readable code
 
 
 

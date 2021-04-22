@@ -1,5 +1,5 @@
 export const Categories = [
-    {value: 'friend', viewValue: 'Friend'},
-    {value: 'family', viewValue: 'Family'},
-    {value: 'colleague', viewValue: 'Colleague'}
-  ];
+  { value: 'friend', viewValue: 'Friend' },
+  { value: 'family', viewValue: 'Family' },
+  { value: 'colleague', viewValue: 'Colleague' }
+];

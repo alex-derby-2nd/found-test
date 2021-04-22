@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, map, retry } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { Contact } from '../../models/contact.model';
 
 @Injectable({
@@ -17,8 +17,8 @@ export class DataService {
 
   getContacts() {
     this.http.get(this.url).pipe(
-      map((res: Contact) => {
-        return res
+      map((res: Contact[]) => {
+        return res;
       }),
       catchError((err) => {
         return throwError(err);
@@ -28,22 +28,33 @@ export class DataService {
     });
   }
 
-  createContact(contact) {
-    return this.http.post(this.url, contact).subscribe(() => {
-      this.getContacts();
-    }
-    )
+  createContact(contact): Observable<any> {
+    return this.http.post(this.url, contact).pipe(
+      map(res => {
+        return res;
+      }),
+      catchError(err => {
+        return throwError(err);
+      }));
   }
 
-  updateContact(contact) {
-    return this.http.patch(this.url + contact.id, contact).subscribe(() => {
-      this.getContacts();
-    })
+  updateContact(contact): Observable<any> {
+    return this.http.patch(this.url + contact.id, contact).pipe(
+      map(res => {
+        return res;
+      }),
+      catchError(err => {
+        return throwError(err);
+      }));
   }
 
-  deleteContact(contact) {
-    return this.http.delete(this.url + contact.id).subscribe(() => {
-      this.getContacts();
-    })
+  deleteContact(contact): Observable<any> {
+    return this.http.delete(this.url + contact.id).pipe(
+      map(res => {
+        return res;
+      }),
+      catchError(err => {
+        return throwError(err);
+      }))
   }
 }

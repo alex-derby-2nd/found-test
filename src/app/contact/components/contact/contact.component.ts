@@ -12,17 +12,17 @@ export class ContactComponent implements OnInit {
 
   @Output() contactDeletion = new EventEmitter();
   @Output() contactEdit = new EventEmitter();
-  
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  deleteContact() {
+  deleteContact(): void {
     this.contactDeletion.emit(this.contact);
   }
 
-  openContact() {
+  openContact(): void {
     this.contactEdit.emit(this.contact);
   }
 

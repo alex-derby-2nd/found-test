@@ -13,39 +13,39 @@ describe('ContactListComponent', () => {
 
   const mockList: Contact[] = [
     {
-      firstName: "Steve",
-      lastName: "Smithies",
-      phoneNumber: "07712312",
-      category: "friend",
+      firstName: 'Steve',
+      lastName: 'Smithies',
+      phoneNumber: '07712312',
+      category: 'friend',
       id: 5
     },
     {
-      firstName: "John",
-      lastName: "Smith",
-      phoneNumber: "07729431312",
-      category: "family",
+      firstName: 'John',
+      lastName: 'Smith',
+      phoneNumber: '07729431312',
+      category: 'family',
       id: 3
     },
     {
-      firstName: "Steven",
-      lastName: "Brown",
-      phoneNumber: "0771233131",
-      category: "friend",
+      firstName: 'Steven',
+      lastName: 'Brown',
+      phoneNumber: '0771233131',
+      category: 'friend',
       id: 6
     },
     {
-      firstName: "Zack",
-      lastName: "Alonso",
-      phoneNumber: "07729795989",
-      category: "family",
+      firstName: 'Zack',
+      lastName: 'Alonso',
+      phoneNumber: '07729795989',
+      category: 'family',
       id: 7
     }
-  ]
+  ];
 
   const mockDataService = {
     getContacts: jasmine.createSpy('getContacts').and.returnValue(of(mockList)),
     updateContact: jasmine.createSpy('updateContact').and.returnValue(of({})),
-    creaetContact: jasmine.createSpy('createContact').and.returnValue(of({})),
+    createContact: jasmine.createSpy('createContact').and.returnValue(of({})),
     deleteContact: jasmine.createSpy('deleteContact').and.returnValue(of({})),
   };
 
@@ -56,7 +56,8 @@ describe('ContactListComponent', () => {
         class: DataService, useValue: mockDataService
       }],
       imports: [HttpClientTestingModule]
-    })
+    }
+    )
       .compileComponents();
   });
 
@@ -79,7 +80,9 @@ describe('ContactListComponent', () => {
         category: 'family'
       };
 
-      spyOn(component.dataService, 'createContact');
+      spyOn(component.dataService, 'createContact').and.returnValue(of({}));
+      console.log(component.dataService.createContact)
+
       component.handleContactCreation(contact);
 
       expect(component.dataService.createContact).toHaveBeenCalledWith(contact);
@@ -94,7 +97,7 @@ describe('ContactListComponent', () => {
         id: 5
       };
 
-      spyOn(component.dataService, 'updateContact');
+      spyOn(component.dataService, 'updateContact').and.returnValue(of({}));
       component.handleContactCreation(contact);
 
       expect(component.dataService.updateContact).toHaveBeenCalledWith(contact);

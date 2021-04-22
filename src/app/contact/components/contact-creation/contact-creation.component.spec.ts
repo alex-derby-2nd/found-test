@@ -47,9 +47,9 @@ describe('ContactCreationComponent', () => {
       component.handleContactEdit();
 
       expect(component.firstName.value).toEqual(component.contact.firstName);
-      expect(component.lastName.value).toEqual(component.contact.lastName)
-      expect(component.phoneNumber.value).toEqual(component.contact.phoneNumber)
-      expect(component.category.value).toEqual(component.contact.category)
+      expect(component.lastName.value).toEqual(component.contact.lastName);
+      expect(component.phoneNumber.value).toEqual(component.contact.phoneNumber);
+      expect(component.category.value).toEqual(component.contact.category);
     });
   });
 

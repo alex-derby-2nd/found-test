@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { Contact } from '../../models/contact.model';
 import { DataService } from '../../services/data-service/data.service';
-import { ContactCreationComponent } from '../contact-creation/contact-creation.component';
 import { Categories } from '../../models/categories';
 
 
@@ -12,7 +10,6 @@ import { Categories } from '../../models/categories';
   styleUrls: ['./contact-list.component.scss']
 })
 export class ContactListComponent implements OnInit {
-
   contacts;
   contactSelected: Contact;
   showOverlay: boolean;
@@ -32,11 +29,11 @@ export class ContactListComponent implements OnInit {
     this.dataService.getContacts();
   }
 
-  closeOverlay() {
+  closeOverlay(): void {
     this.showOverlay = false;
   }
 
-  openOverlay(contact?: Contact) {
+  openOverlay(contact?: Contact): void {
     if (contact) {
       this.contactSelected = contact;
     }
@@ -45,21 +42,27 @@ export class ContactListComponent implements OnInit {
 
   handleContactCreation(contact) {
     if (!contact.id) {
-      this.dataService.createContact(contact);
+      this.dataService.createContact(contact).subscribe(() => {
+        this.dataService.getContacts();
+      });
     } else {
-      this.dataService.updateContact(contact);
+      this.dataService.updateContact(contact).subscribe(() => {
+        this.dataService.getContacts();
+      });
     }
   }
 
-  handleSortChange(sortString: string) {
+  handleSortChange(sortString: string): void {
     this.sort = sortString;
   }
 
-  deleteContact(contact: Contact) {
-    this.dataService.deleteContact(contact);
+  deleteContact(contact: Contact): void{
+    this.dataService.deleteContact(contact).subscribe(() => {
+      this.dataService.getContacts();
+    });
   }
 
-  onFilterChange(searchString: string) {
+  onFilterChange(searchString: string): void {
     this.filterText = searchString;
   }
 }

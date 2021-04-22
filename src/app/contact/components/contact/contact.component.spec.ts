@@ -22,7 +22,7 @@ describe('ContactComponent', () => {
       lastName: 'Smith',
       phoneNumber: '07729795989',
       category: 'friend'
-    }
+    };
     fixture.detectChanges();
   });
 
