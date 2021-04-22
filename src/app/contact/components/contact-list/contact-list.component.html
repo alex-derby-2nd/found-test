@@ -1,0 +1,35 @@
+<div>
+  <span>
+    <mat-form-field>
+      <mat-label>Start typing...</mat-label>
+      <input matInput type="text" (input)="onFilterChange($event.target.value)">
+    </mat-form-field>
+  </span>
+  <mat-radio-group [(ngModel)]="sort">
+    <mat-radio-button *ngFor="let sort of sortList" [value]="sort.value">
+      {{sort.textValue}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <span>
+    <label for="category">Category</label>
+    <mat-form-field>
+      <select matNativeControl [(ngModel)]="selectedCategory">
+        <option value="" selected></option>
+        <option *ngFor="let category of categories" [value]="category.value">
+          {{category.viewValue}}
+        </option>
+      </select>
+    </mat-form-field>
+  </span>
+  <button mat-raised-button class="new-btn" color="primary" (click)="openOverlay()">New</button>
+</div>
+
+<mat-list>
+  <div *ngFor="let contact of dataService.contactList | filter: filterText: sort: selectedCategory">
+    <app-contact [contact]="contact" (contactEdit)="openOverlay($event)" (contactDeletion)="deleteContact($event)">
+    </app-contact>
+  </div>
+</mat-list>
+
+<app-contact-creation *ngIf="showOverlay" [contact]="contactSelected" (close)="closeOverlay()"
+  (newContact)="handleContactCreation($event)"></app-contact-creation>

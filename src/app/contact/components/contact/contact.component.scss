@@ -1,0 +1,21 @@
+mat-card {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+}
+
+.contact-photo {
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    background-color: white;
+    margin: 0 auto;
+    background-image: url('../../../../assets/icons/default_image.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    top:75px;
+}

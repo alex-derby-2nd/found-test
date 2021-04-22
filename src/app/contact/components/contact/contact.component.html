@@ -1,0 +1,17 @@
+<mat-card>
+  <div class="contact-photo"></div>
+  <ul>
+    <li>
+      <b>{{contact.firstName}} {{contact.lastName}}</b>
+    </li>
+    <li>
+      {{contact.phoneNumber}}
+    </li>
+    <li>
+      {{contact.category.toUpperCase()}}
+    </li>
+  </ul>
+
+  <button mat-raised-button color="primary" (click)="openContact()">Edit</button>
+  <button mat-raised-button color="warn" style="float: right;" (click)="deleteContact()">Delete</button>
+</mat-card>

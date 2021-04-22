@@ -1,0 +1,39 @@
+{
+  "contacts": [
+    {
+      "firstName": "John",
+      "lastName": "Smith",
+      "phoneNumber": "07729431312",
+      "category": "colleague",
+      "id": 3
+    },
+    {
+      "firstName": "Joe",
+      "lastName": "Smithies",
+      "phoneNumber": "0771231232",
+      "category": "friend",
+      "id": 5
+    },
+    {
+      "firstName": "Alan",
+      "lastName": "Zack",
+      "phoneNumber": "",
+      "category": "friend",
+      "id": 6
+    },
+    {
+      "firstName": "Alexander",
+      "lastName": "Derby",
+      "phoneNumber": "07729795989",
+      "category": "colleague",
+      "id": 7
+    },
+    {
+      "firstName": "Zack",
+      "lastName": "Alan",
+      "phoneNumber": "07729795989",
+      "category": "friend",
+      "id": 1
+    }
+  ]
+}

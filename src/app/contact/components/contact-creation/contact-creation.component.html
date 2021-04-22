@@ -1,0 +1,47 @@
+<div class="overlay"></div>
+
+<div class="overlay-wrapper">
+  <div class="overlay-content">
+    <div [formGroup]="contactForm" class="overlay-data">
+      <div class="contact-form">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName">
+          <mat-error *ngIf="!firstName.valid">
+            Please enter a valid first name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName">
+          <mat-error *ngIf="!lastName.valid">
+            Please enter a valid last name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phoneNumber">
+          <mat-error *ngIf="!phoneNumber.valid">
+            Please enter a valid phone number
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <select matNativeControl formControlName="category">
+            <option value="" selected></option>
+            <option *ngFor="let option of categories" [value]="option.value">
+              {{option.viewValue}}
+            </option>
+          </select>
+          <mat-error *ngIf="!category.valid">
+            Please select a category
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <button mat-button color="primary" (click)="createContact()">Complete</button>
+      <button mat-button color="warn" (click)="closeCreation()">Cancel</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+.overlay {
+    background-color: rgba($color: #a7a2a2, $alpha: 1.0);
+    opacity: 0.5;
+    height: 100%;
+    left: 0;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .overlay-wrapper {
+    max-width: 1024px;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  .overlay-content {
+    background: white;
+    float: right;
+    min-height: fit-content;
+    min-width: fit-content;
+    width: 250px;
+    padding: 30px;
+    border-radius: 2px;
+  }
+
+  .overlay-data {
+    display: inline-block;
+  }
+
+  
+.contact-form {
+    display: grid;
+  }
