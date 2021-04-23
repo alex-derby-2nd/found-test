@@ -19,7 +19,7 @@
     - They can search using the search bar in the top left, this will search both first and last name
     - They can sort by first name or last name by clicking either of the radio buttons
     - They can sort by category through the dropdown
-    - These filters are INCLUSIVE, meaning that you can refine your search using all 3 forms
+    - These filters are INCLUSIVE, meaning that you can refine your search using all 3
 
  * The user can add a new contact by clicking on the 'New' button
     - This will bring up an overlay for the user to enter the information
@@ -32,8 +32,8 @@
 
  ### My feedback/analysis:
 * I decided to use a simple json-server to hold the data of the customers
-    - This works well for basic data but if I were introduce images like I had planned, I would have had to flesh it out quite a bit more to handle image uploads
-    - Would like introduce a basic node service or investigate if its easier with local storage using electron
+    - This works well for basic data but if I were to introduce images like I had planned, I would have had to flesh it out quite a bit more to handle image uploads
+    - Would likely have to introduce a basic node service or investigate if its easier with local storage using electron
     - This allows for 4 basic CRUD operations for the contacts
 * I would have liked to spent more time with my design/styling
     - I dont normally use angular material at all really, but introduced it just to get some basic designs
