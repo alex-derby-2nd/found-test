@@ -43,8 +43,7 @@
 * This is the first time I have used electron
     - I had never touched electron before this project and it was interesting to learn
     - Although I do feel like I've barely scratched the service of it and intend to do some more digging in my spare time
-* More testing is required
-    - Ideally I'd have gotten more tests done and set up a report for coverage, however I did not want to spend a lot of time on those
+* More testing is required to get the coverage up
     - I try to work my best with TDD and did so for the most part. Particularily with the filter pipe.
 * The filter pipe has got a bit messy, ideally I'd refactor some of it down to more readable code
 
