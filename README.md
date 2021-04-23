@@ -37,7 +37,7 @@
     - This allows for 4 basic CRUD operations for the contacts
 * I would have liked to spent more time with my design/styling
     - I dont normally use angular material at all really, but introduced it just to get some basic designs
-    - Ideally I'd gut a lot of the skeleton text and make it a bit more user friendly
+    - Ideally I'd gut a lot of the skeleton html and make it a bit more user friendly in terms of layout
 * The screens I use are 1920*1080
     - I would have liked to have spent more time making the application a little more responsive in terms of appearence
 * This is the first time I have used electron
