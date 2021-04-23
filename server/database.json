@@ -20,6 +20,20 @@
       "phoneNumber": "07729795989",
       "category": "friend",
       "id": 1
+    },
+    {
+      "firstName": "John",
+      "lastName": "Smith",
+      "phoneNumber": "07712312312",
+      "category": "family",
+      "id": 8
+    },
+    {
+      "firstName": "Alan",
+      "lastName": "Zackary",
+      "phoneNumber": "",
+      "category": "friend",
+      "id": 9
     }
   ]
 }
