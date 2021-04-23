@@ -33,6 +33,7 @@
  ### My feedback/analysis:
 * I decided to use a simple json-server to hold the data of the customers
     - This works well for basic data but if I were introduce images like I had planned, I would have had to flesh it out quite a bit more to handle image uploads
+    - Would like introduce a basic node service or investigate if its easier with local storage using electron
     - This allows for 4 basic CRUD operations for the contacts
 * I would have liked to spent more time with my design/styling
     - I dont normally use angular material at all really, but introduced it just to get some basic designs
